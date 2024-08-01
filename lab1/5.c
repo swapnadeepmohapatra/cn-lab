@@ -24,11 +24,9 @@ void main()
     printf("Enter a number: ");
     scanf("%x", &num);
 
-    printf("Byte 1: %x\n", (num & 0xFF000000) >> 24);
-    printf("Byte 2: %x\n", (num & 0x00FF0000) >> 16);
-    printf("Byte 3: %x\n", (num & 0x0000FF00) >> 8);
-    printf("Byte 4: %x\n", (num & 0x000000FF));
+    printf("Byte 3: %x\n", (num & 0xFF00) >> 8);
+    printf("Byte 4: %x\n", (num & 0x00FF));
 
-    unsigned int swapped = ((num & 0xFF000000) >> 24) | ((num & 0x00FF0000) >> 8) | ((num & 0x0000FF00) << 8) | ((num & 0x000000FF) << 24);
+    unsigned int swapped = ((num & 0xFF00) >> 8) | ((num & 0x00FF) << 8);
     printf("Swapped: %x\n", swapped);
 }
