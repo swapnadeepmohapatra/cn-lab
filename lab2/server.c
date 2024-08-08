@@ -52,7 +52,7 @@ int main(){
 
     printf("Message from client: %s\n", buffer);
 
-    bytes_sent = sendto(sockfd, (const char *) response, strlen(response), MSG_OOB, (const struct sockaddr *) &client_addr, length);
+    bytes_sent = sendto(sockfd, (const char *) response, strlen(response), 0, (const struct sockaddr *) &client_addr, length);
 
     printf("Hello Message sent to client\n");
     close(sockfd);

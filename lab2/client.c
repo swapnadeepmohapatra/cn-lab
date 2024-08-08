@@ -44,9 +44,9 @@ void main(){
 
     printf("Socket created\n");
 
-    // bytes_sent = sendto(sockfd, (const char *) message, strlen(message), MSG_OOB, (const struct sockaddr *) &server_addr, length);
+    // bytes_sent = sendto(sockfd, (const char *) message, strlen(message), 0, (const struct sockaddr *) &server_addr, length);
 
-    bytes_sent = send(sockfd, (const char *) message, strlen(message), MSG_OOB);
+    bytes_sent = send(sockfd, (const char *) message, strlen(message), 0);
 
     printf("Message sent to server\n");
 
