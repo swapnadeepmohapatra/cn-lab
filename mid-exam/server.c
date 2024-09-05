@@ -33,6 +33,20 @@ void main()
         sum += numbers[i];
     }
     int mean = sum / n;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (numbers[i] > numbers[j])
+            {
+                int temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+    }
+
     int median = numbers[n / 2];
 
     int results[3];

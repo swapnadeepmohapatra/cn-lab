@@ -21,9 +21,9 @@ void main()
     server_addr.sin_port = htons(PORT);
     server_addr.sin_addr.s_addr = INADDR_ANY;
 
-    printf("Enter 5 numbers: ");
     for (int i = 0; i < 5; i++)
     {
+        printf("Enter %d number: ");
         scanf("%d", &numbers[i]);
     }
 
