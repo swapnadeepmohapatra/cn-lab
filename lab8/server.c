@@ -12,6 +12,8 @@
 #define BUFFER_SIZE 1024
 #define MAX_CLIENTS 5
 
+int process_count = 0;
+
 int main(int argc, char *argv[])
 {
     int server_fd, client_fd;
@@ -44,6 +46,8 @@ int main(int argc, char *argv[])
         {
             close(server_fd);
 
+            process_count++;
+
             char buffer[BUFFER_SIZE];
             ssize_t n;
 
@@ -59,7 +63,7 @@ int main(int argc, char *argv[])
                     break;
                 }
 
-                printf("Client: %s\n", buffer);
+                printf("%d Client: %s\n", process_count, buffer);
                 send(client_fd, buffer, n, 0);
             }
 
